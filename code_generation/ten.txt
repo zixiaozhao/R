@@ -1,0 +1,99 @@
+# Example Task: Write an R function that filters a dataframe by a given column value.
+filter_by_value <- function(df, column, value) {
+  return(df[df[[column]] == value, ])
+}
+
+# Example Task: Write an R function that calculates the mean of a numeric vector.
+calculate_mean <- function(x) {
+  return(mean(x))
+}
+
+# Example Task: Write an R function that plots a histogram of a numeric column in a dataframe.
+plot_histogram <- function(df, column) {
+  hist(df[[column]], main=paste("Histogram of", column), xlab=column, col="blue")
+}
+
+# Example Task: Write an R function that summarizes a dataframe's structure and basic statistics for each column.
+summarize_dataframe <- function(df) {
+  cat("Data Frame Structure:\n")
+  str(df)
+  
+  cat("\nSummary of Each Column:\n")
+  print(summary(df))
+}
+
+# Example task: Filter rows based on a numeric column exceeding a given threshold
+filter_by_threshold <- function(df, col, threshold) {
+  stopifnot(is.data.frame(df), col %in% names(df), is.numeric(df[[col]]))
+  df[df[[col]] > threshold, ]
+}
+
+# Example task:sort a data frame by a specific column in ascending or descending order
+sort_by_column <- function(df, col, decreasing = FALSE) {
+  stopifnot(is.data.frame(df), col %in% names(df))
+  df[order(df[[col]], decreasing = decreasing), ]
+}
+
+# Example task: Reshape a data frame from wide to long format using base R
+reshape_wide_to_long <- function(df, id_cols, time_var, varying_cols) {
+  stopifnot(is.data.frame(df))
+  reshape(
+    data = df,
+    idvar = id_cols,
+    varying = varying_cols,
+    v.names = time_var,
+    timevar = "Time",
+    direction = "long"
+  )
+}
+
+# Example task: Open specified url in browser.
+BROWSE <- function(url = NULL, config = list(), ..., handle = NULL) {
+  hu <- handle_url(handle, url, ...)
+  if (interactive()) {
+    utils::browseURL(hu$url)
+  } else {
+    message("Please point your browser to the following url: ")
+    message(hu$url)
+  }
+}
+
+
+# Example task: Clean cache Delete all files in the pkgdown cache directory.
+clean_cache <- function(pkg = ".", quiet = FALSE) {
+
+  pkg <- as_pkgdown(pkg)
+  cache_path <- tools::R_user_dir("pkgdown", "cache")
+
+  if (dir_exists(cache_path)) {
+    if (!quiet) {
+      cli::cli_inform(
+        "Cleaning {.pkg {pkg$package}} cache files from {.path {cache_path}}"
+      )
+    }
+
+    dir_delete(cache_path)
+  }
+
+  invisible(TRUE)
+}
+
+# Example task: Update Collate field in DESCRIPTION.
+update_collate <- function(base_path) {
+  if (!file.exists(base_path)) {
+    cli::cli_abort("{.path {base_path}} doesn't exist")
+  }
+
+  new <- generate_collate(file.path(base_path, "R"))
+  if (is.null(new)) return(invisible())
+
+  desc_path <- file.path(base_path, "DESCRIPTION")
+  old <- desc::desc_get_collate(file = desc_path)
+
+  if (!identical(old, new)) {
+    cli::cli_inform("Updating collate directive in {.path {desc_path}}")
+    desc::desc_set_collate(new, file = desc_path)
+  }
+
+  invisible()
+}

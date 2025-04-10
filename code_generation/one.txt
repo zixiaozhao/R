@@ -1,0 +1,4 @@
+# Example Task: Write an R function that calculates the mean of a numeric vector.
+calculate_mean <- function(x) {
+  return(mean(x))
+}

@@ -1,0 +1,14 @@
+# Example Task: Write an R function that filters a dataframe by a given column value.
+filter_by_value <- function(df, column, value) {
+  return(df[df[[column]] == value, ])
+}
+
+# Example Task: Write an R function that calculates the mean of a numeric vector.
+calculate_mean <- function(x) {
+  return(mean(x))
+}
+
+# Example Task: Write an R function that plots a histogram of a numeric column in a dataframe.
+plot_histogram <- function(df, column) {
+  hist(df[[column]], main=paste("Histogram of", column), xlab=column, col="blue")
+}

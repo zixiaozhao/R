@@ -7,66 +7,52 @@ The task is to generate code snippet for a given natural language comments, and 
 
 ### Dependency and setup
 
-1. You will need Python 3.8 or higher.
+You will need Python 3.8 or higher.
 
-2. You will need to install some Python packages:
+### Zero-shot setting
 
-    ```bash
-    pip3 install aiohttp numpy tqdm pytest datasets torch transformers
-    ```
+For Zero-shot setting, you can follow the [MultiPL-E](https://github.com/nuprl/MultiPL-E/tree/main) repo. Using the following script:
+ ```
+mkdir tutorial
+python3 automodel.py \
+    --name bigcode/gpt_bigcode-santacoder \
+    --root-dataset humaneval \
+    --lang r \
+    --temperature 0.2 \
+    --batch-size 20 \
+    --completion-limit 20 \
+    --output-dir-prefix tutorial
+ ```
+For different model, just replace [SantaCoder](https://huggingface.co/bigcode/gpt_bigcode-santacoder) model with the model name.
+### Few-shot setting
 
-3. You need to install one of [Podman] or [Docker].
+For Few-shot setting, please refer to the one.txt to ten.txt for simple R demo. Follow the same apporch as zero-shoting but use the following script:
+ ```
+mkdir tutorial
+python3 automodel.py \
+    --prompt-prefix \
+    --name bigcode/gpt_bigcode-santacoder \
+    --root-dataset humaneval \
+    --lang r \
+    --temperature 0.2 \
+    --batch-size 20 \
+    --completion-limit 20 \
+    --output-dir-prefix tutorial
+ ```
 
-3. Check out the repository:    
+ Place the sample R code after prefix--prompt-prefix.
 
-   ```bash
-   git clone https://github.com/nuprl/MultiPL-E
-   ```
-
-4. Enter the repository directory:
-
-   ```bash
-   cd MultiPL-E
-   ```
-
-### Fine-tune
-
-To fine-tune encoder-decoder CodeBERT on the dataset, for GraphCodeBERT and other models, follow the exact instructions followed for CodeBERT, just replace the "microsoft/codebert-base" with the targeet model.
-
-```shell
-cd code
-lang=ruby #programming language
-lr=5e-5
-batch_size=32
-beam_size=10
-source_length=256
-target_length=128
-data_dir=../dataset
-output_dir=model/$lang
-train_file=$data_dir/$lang/train.jsonl
-dev_file=$data_dir/$lang/valid.jsonl
-epochs=10 
-pretrained_model=microsoft/codebert-base #Roberta: roberta-base
-
-python run.py --do_train --do_eval --model_type roberta --model_name_or_path $pretrained_model --train_filename $train_file --dev_filename $dev_file --output_dir $output_dir --max_source_length $source_length --max_target_length $target_length --beam_size $beam_size --train_batch_size $batch_size --eval_batch_size $batch_size --learning_rate $lr --num_train_epochs $epochs
-```
-
-
-### Inference
-
-```shell
-batch_size=64
-dev_file=$data_dir/$lang/valid.jsonl
-test_file=$data_dir/$lang/test.jsonl
-test_model=$output_dir/checkpoint-best-bleu/pytorch_model.bin #checkpoint for test
-
-python run.py --do_test --model_type roberta --model_name_or_path microsoft/codebert-base --load_model_path $test_model --dev_filename $dev_file --test_filename $test_file --output_dir $output_dir --max_source_length $source_length --max_target_length $target_length --beam_size $beam_size --eval_batch_size $batch_size
-```
-
-### Evaluation
-
-```shell
-python ../evaluator/evaluator.py model/$lang/test_1.gold < model/$lang/test_1.output
-```
-
-
+ For BM25 or embedding few-shot, replace the completions.py located under [MultiPL-E/multipl_e/](https://github.com/nuprl/MultiPL-E/tree/main/multipl_e) with completion_few_shot.py provided here and follow the following script:
+  ```
+mkdir tutorial
+python3 automodel.py \
+    --prompt-num 1\
+    --name bigcode/gpt_bigcode-santacoder \
+    --root-dataset humaneval \
+    --lang r \
+    --temperature 0.2 \
+    --batch-size 20 \
+    --completion-limit 20 \
+    --output-dir-prefix tutorial
+ ```
+ Where prompt num is the number of example you want to include in your few-shot examples.
