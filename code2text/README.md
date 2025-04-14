@@ -44,7 +44,7 @@ pretrained_model=microsoft/codebert-base #Roberta: roberta-base
 
 python run.py --do_train --do_eval --model_type roberta --model_name_or_path $pretrained_model --train_filename $train_file --dev_filename $dev_file --output_dir $output_dir --max_source_length $source_length --max_target_length $target_length --beam_size $beam_size --train_batch_size $batch_size --eval_batch_size $batch_size --learning_rate $lr --num_train_epochs $epochs
 ```
-
+For method name prediction, change the target_length to 10 and everthing else remain the same.
 
 ### Inference
 
