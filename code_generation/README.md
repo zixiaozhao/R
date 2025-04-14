@@ -23,7 +23,7 @@ python3 automodel.py \
     --completion-limit 20 \
     --output-dir-prefix tutorial
  ```
-For different model, just replace [SantaCoder](https://huggingface.co/bigcode/gpt_bigcode-santacoder) model with the model name.
+For different model, just replace [SantaCoder](https://huggingface.co/bigcode/gpt_bigcode-santacoder) model with the model name. Note here the temperature is set to 0.2, for greedy aproach, you should not use this parameter.
 ### Few-shot setting
 
 For Few-shot setting, please refer to the one.txt to ten.txt for simple R demo. Follow the same apporch as zero-shoting but use the following script:
