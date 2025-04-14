@@ -1,0 +1,17 @@
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=1
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=2
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=3
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=4
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=5
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=6
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=7
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=8
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=9
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3E2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=10
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=1
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=2
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=3
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=4
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=5
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=6
+https://api.github.com/search/repositories?q=NOT+awesome+NOT+personal+archived:false+language:R+topic:r-package+pushed:%3E=2022-01-01+created:%3C=2019-05-01+is:public+&sort=stars&order=desc&per_page=100&page=7
