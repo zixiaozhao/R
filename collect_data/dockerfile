@@ -1,0 +1,23 @@
+FROM python:3.9.13-slim AS base
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    TZ=UTC
+
+WORKDIR /R
+
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt \
+ && pip install --no-cache-dir "jupyterlab>=4.0.0"
+
+COPY . .
+
+EXPOSE 8888
+
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
