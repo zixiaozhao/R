@@ -22,10 +22,15 @@ accelerate launch  main.py \
   --allow_code_execution
 ```
 
-If starcoder2 is used as the test model, running the above command should give you pass@1: 29.23%, pass@10: 64.69. Note if you want to compute pass@5, change line 50 in bigcode_eval/tasks/humaneval.py so that K= [1, 5, 10]
+If starcoder2 is used as the test model, running the above command should give you pass@1: 29.23%, pass@10: 64.69%. Note if you want to compute pass@5 or any other pass@K, change line 50 in bigcode_eval/tasks/humaneval.py so that K= [1, 5, 10]
 
-### Zero-shot setting
+### Few-shot setting
 
+First install the requirements by:
+```
+pip install requirements.txt
+```
+#### zero-shot setting
 For the Zero-shot setting, you can follow the [MultiPL-E](https://github.com/zixiaozhao/MultiPL-E) repo. Using the following script:
  ```
 mkdir tutorial
@@ -42,7 +47,7 @@ For a different model, just replace [SantaCoder](https://huggingface.co/bigcode/
 
 Successfully running the script should give you pass@1 = 20.5 for starcoder2.
 
-### Few-shot setting
+#### Few-shot setting
 
 For the Few-shot setting, please refer to the one.txt to ten.txt for a simple R demo. Follow the same approach as zero-shotting, but use the following script:
  ```
