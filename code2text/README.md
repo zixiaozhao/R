@@ -36,8 +36,8 @@ For monolingual fine-tuning and inference, please download the dataset from [her
 ### Dependency
 
 - python 3.8
-- torch==1.12.0
-- transformers==4.20.1
+- torch==1.12.1
+- transformers==4.20.0
 
 ### Fine-tune
 
