@@ -11,7 +11,7 @@ You will need Python 3.8 or higher.
 
 ### Zero-shot setting
 
-For Zero-shot setting, you can follow the [MultiPL-E](https://github.com/nuprl/MultiPL-E/tree/main) repo. Using the following script:
+For the Zero-shot setting, you can follow the [MultiPL-E](https://github.com/nuprl/MultiPL-E/tree/main) repo. Using the following script:
  ```
 mkdir tutorial
 python3 automodel.py \
@@ -23,7 +23,9 @@ python3 automodel.py \
     --completion-limit 20 \
     --output-dir-prefix tutorial
  ```
-For different model, just replace [SantaCoder](https://huggingface.co/bigcode/gpt_bigcode-santacoder) model with the model name. Note here the temperature is set to 0.2, for greedy aproach, you should not use this parameter.
+For a different model, just replace [SantaCoder](https://huggingface.co/bigcode/gpt_bigcode-santacoder) model with the model name. Note here the temperature is set to 0.2, for greedy approach, you should not use this parameter.
+
+Successfully running the script should give you pass@1 = 20.5 for starcoder2.
 ### Few-shot setting
 
 For Few-shot setting, please refer to the one.txt to ten.txt for simple R demo. Follow the same apporch as zero-shoting but use the following script:
