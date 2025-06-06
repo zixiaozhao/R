@@ -5,6 +5,7 @@
 The task is to generate natural language comments for a given code snippet, and evaluated by [smoothed bleu-4](https://www.aclweb.org/anthology/C04-1072.pdf) score.
 
 ## Dataset structure
+```
 .
 ├── code/ # Evaluation & training scripts
 │ ├── bleu.py # BLEU score computation
@@ -16,7 +17,7 @@ The task is to generate natural language comments for a given code snippet, and 
 │ ├── R/ # R code + annotations
 │ ├── ruby/ # Ruby code + annotations
 │ └── ... # Additional languages (Go, JS, etc.)
-
+```
 ## Monolingual fine-tuning and inference
 
 For monolingual fine-tuning and inference, please clone the "CodeXGLUE" [repo](https://github.com/zixiaozhao/CodeXGLUE/tree/main/Code-Text/code-to-text) and follow the instructions.
