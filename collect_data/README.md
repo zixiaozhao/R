@@ -24,3 +24,6 @@ Ensure the following Python libraries are installed. If not, you can install the
 
 ```bash
 pip install requests pandas
+```
+### API USED
+This section uses the GitHub [REST](https://docs.github.com/en/rest/about-the-rest-api/about-the-rest-api?apiVersion=2022-11-28) API to collect all the data.
